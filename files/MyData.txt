@@ -1,0 +1,3 @@
+Name: Roshan Bharati
+Address: Kohalpur 11, Banke
+Salary: 150000.0
