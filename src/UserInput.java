@@ -8,7 +8,7 @@ public class UserInput
     public void takeInput()
     {
         Scanner consoleReader = new Scanner(System.in);
-        System.out.print("Enter two numbers: ");
+        System.out.println("Enter two numbers: ");
         num1 = consoleReader.nextInt();
         num2 = consoleReader.nextInt();
     }

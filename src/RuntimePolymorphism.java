@@ -29,8 +29,10 @@ public class RuntimePolymorphism
     public static void main(String[] args)
     {
         Animal whoAmI = new Cat();
-//        Animal whoAmI = new Dog();
-//        Animal whoAmI = new Animal();
+        Animal whoAmI2 = new Dog();
+        Animal whoAmI3 = new Animal();
         whoAmI.speak();
+        whoAmI2.speak();
+        whoAmI3.speak();
     }
 }

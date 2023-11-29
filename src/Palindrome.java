@@ -32,35 +32,35 @@ public class Palindrome implements AutoCloseable
         ConsoleReader.close();
     }
 
+    public boolean isPalindrome(String s)
+    {
+        int len = s.length();
+        for (int i = 0; i < len/2; ++i)
+        {
+            if (s.charAt(i) != s.charAt(len - i - 1))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public void run()
     {
         String input;
-        String number;
-        boolean isPalindrome;
+        String str;
+        boolean isPalin;
 
-        do
+        System.out.print("\nEnter your text: ");
+        str = ConsoleReader.nextLine();
+
+        String[] tokens = str.split(" ");
+        for (String token: tokens)
         {
-            System.out.print("\nEnter a number: ");
-            number = ConsoleReader.nextLine();
-
-            isPalindrome = true;
-            int len = number.length();
-            for (int i = 0; i < len/2; ++i)
-            {
-                if (number.charAt(i) != number.charAt(len - i - 1))
-                {
-                    isPalindrome = false;
-                    break;
-                }
-            }
-
-            System.out.println("\t" + number + " is " + (isPalindrome ? "palindrome" : "not-palindrome"));
-            write(isPalindrome ? PalindromeFile : NonPalindromeFile, number);
-
-            System.out.print("Enter 'exit' to quit program ... waiting response ... : ");
-            input = ConsoleReader.nextLine();
-
-        } while ( ! input.equalsIgnoreCase("exit") );
+            isPalin = isPalindrome(token);
+            write(isPalin ? PalindromeFile : NonPalindromeFile, token);
+        }
     }
 
     public static void main(String[] args) throws IOException
